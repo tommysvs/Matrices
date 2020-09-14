@@ -191,9 +191,10 @@ namespace Matrices {
 					static_cast<System::Byte>(0)));
 				this->label1->Location = System::Drawing::Point(16, 52);
 				this->label1->Name = L"label1";
-				this->label1->Size = System::Drawing::Size(447, 17);
+				this->label1->Size = System::Drawing::Size(717, 17);
 				this->label1->TabIndex = 8;
-				this->label1->Text = L"Programa hecho para realizar diferentes operaciones con matrices.";
+				this->label1->Text = L"Realización de operaciones de suma, resta, multiplicación y cálculo de determinan"
+					L"te de dos matrices dadas.";
 				// 
 				// panelLine1
 				// 
