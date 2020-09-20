@@ -6,7 +6,7 @@
 
 class Operaciones {
 private:
-
+	int** num_matriz;
 public:
 	Operaciones();
 
