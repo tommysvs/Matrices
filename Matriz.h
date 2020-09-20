@@ -105,8 +105,8 @@ namespace Matrices {
 				this->pnl_LoadBar = (gcnew System::Windows::Forms::Panel());
 				this->pnl_LoadBg = (gcnew System::Windows::Forms::Panel());
 				this->lbl_Name = (gcnew System::Windows::Forms::Label());
-				this->timer_LoadScrn = (gcnew System::Windows::Forms::Timer(this->components));
 				this->lbl_IntroTitle = (gcnew System::Windows::Forms::Label());
+				this->timer_LoadScrn = (gcnew System::Windows::Forms::Timer(this->components));
 				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->box_logo))->BeginInit();
 				this->pnl_readArchivos->SuspendLayout();
 				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->grid_MatrizA))->BeginInit();
@@ -463,20 +463,14 @@ namespace Matrices {
 				// lbl_Name
 				// 
 				this->lbl_Name->AutoSize = true;
-				this->lbl_Name->Font = (gcnew System::Drawing::Font(L"Montserrat SemiBold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				this->lbl_Name->Font = (gcnew System::Drawing::Font(L"Montserrat", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
 				this->lbl_Name->ForeColor = System::Drawing::Color::Salmon;
-				this->lbl_Name->Location = System::Drawing::Point(528, 594);
+				this->lbl_Name->Location = System::Drawing::Point(479, 594);
 				this->lbl_Name->Name = L"lbl_Name";
-				this->lbl_Name->Size = System::Drawing::Size(116, 21);
+				this->lbl_Name->Size = System::Drawing::Size(212, 17);
 				this->lbl_Name->TabIndex = 1;
-				this->lbl_Name->Text = L"Tommy Vega";
-				// 
-				// timer_LoadScrn
-				// 
-				this->timer_LoadScrn->Enabled = true;
-				this->timer_LoadScrn->Interval = 15;
-				this->timer_LoadScrn->Tick += gcnew System::EventHandler(this, &Matriz::timer_LoadScrn_Tick);
+				this->lbl_Name->Text = L"Programación III - Tommy Vega";
 				// 
 				// lbl_IntroTitle
 				// 
@@ -491,6 +485,12 @@ namespace Matrices {
 				this->lbl_IntroTitle->TabIndex = 0;
 				this->lbl_IntroTitle->Text = L"Matrices";
 				this->lbl_IntroTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+				// 
+				// timer_LoadScrn
+				// 
+				this->timer_LoadScrn->Enabled = true;
+				this->timer_LoadScrn->Interval = 15;
+				this->timer_LoadScrn->Tick += gcnew System::EventHandler(this, &Matriz::timer_LoadScrn_Tick);
 				// 
 				// Matriz
 				// 
@@ -537,7 +537,6 @@ namespace Matrices {
 			this->btn_Entrar->Hide();
 
 			Console::WriteLine("M A T R I C E S\n");
-			Console::WriteLine("Realización de operaciones de suma, resta, multiplicación y cálculo de determinante de dos matrices dadas.");
 			Console::WriteLine("----------------------------------------------------------------------------------------------------------\n");
 		}
 
@@ -560,6 +559,7 @@ namespace Matrices {
 			}
 			else {
 				String^ numerosA;
+				int addCounter_A = 0;
 
 				archivoA_txt = this->txt_ArchivoA->Text + ".txt";
 				
@@ -573,6 +573,10 @@ namespace Matrices {
 					Console::WriteLine("Nombre de archivo A: " + archivoA_txt);
 
 					while ((numerosA = input_ArchivoA->ReadLine()) != nullptr) {
+						addCounter_A += 1;
+						this->grid_MatrizA->Columns->Add(addCounter_A.ToString(), addCounter_A.ToString());
+						this->grid_MatrizA->Rows->Add(numerosA);
+
 						Console::WriteLine("[ " + numerosA + " ]");
 					}
 
@@ -596,6 +600,7 @@ namespace Matrices {
 			}
 			else {
 				String^ numerosB;
+				int addCounter_B = 0;
 
 				archivoB_txt = this->txt_ArchivoB->Text + ".txt";
 
@@ -609,6 +614,10 @@ namespace Matrices {
 					Console::WriteLine("\nNombre de archivo B: " + archivoB_txt);
 
 					while ((numerosB = input_ArchivoB->ReadLine()) != nullptr) {
+						addCounter_B += 1;
+						this->grid_MatrizB->Columns->Add(addCounter_B.ToString(), addCounter_B.ToString());
+						this->grid_MatrizB->Rows->Add(numerosB);
+
 						Console::WriteLine("[ " + numerosB + " ]");
 					}
 
