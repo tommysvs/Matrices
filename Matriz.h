@@ -17,9 +17,25 @@ namespace Matrices {
 		
 		String^ archivoA_txt;
 		String^ archivoB_txt;
+
+		private: System::Windows::Forms::Label^ label_titulo;
 		private: System::Windows::Forms::Label^ lbl_MatrizA;
 		private: System::Windows::Forms::Label^ lbl_MatrizB;
 		private: System::Windows::Forms::Label^ lbl_error;
+		private: System::Windows::Forms::DataGridView^ grid_MatrizA;
+		private: System::Windows::Forms::Panel^ pnl_Operaciones;
+		private: System::Windows::Forms::Panel^ ln_hor2;
+		private: System::Windows::Forms::Panel^ ln_hor3;
+		private: System::Windows::Forms::DataGridView^ grid_MatrizB;
+		private: System::Windows::Forms::Panel^ pnl_Intro;
+
+		private: System::Windows::Forms::Label^ lbl_Name;
+		private: System::Windows::Forms::Panel^ pnl_LoadBg;
+		private: System::Windows::Forms::Panel^ pnl_LoadBar;
+		private: System::Windows::Forms::Timer^ timer_LoadScrn;
+		private: System::Windows::Forms::Button^ btn_Entrar;
+	private: System::Windows::Forms::Label^ lbl_IntroTitle;
+	private: System::Windows::Forms::Panel^ pnl_readArchivos;
 
 		public:
 			Matriz(void) {
@@ -31,7 +47,6 @@ namespace Matrices {
 				if (components)
 					delete components;
 			}
-		private: System::Windows::Forms::Label^ label_titulo;
 		protected:
 
 		private: System::Windows::Forms::Button^ btn_salir;
@@ -39,10 +54,8 @@ namespace Matrices {
 		private: System::Windows::Forms::Button^ btn_restar;
 		private: System::Windows::Forms::Button^ btn_mult;
 		private: System::Windows::Forms::Button^ btn_det;
-
 		private: System::Windows::Forms::Label^ lbl_desc;
 		private: System::Windows::Forms::Panel^ ln_hor;
-		private: System::Windows::Forms::Panel^ ln_ver;
 		private: System::Windows::Forms::Label^ lbl_instruccion;
 		private: System::Windows::Forms::PictureBox^ box_logo;
 		private: System::Windows::Forms::TextBox^ txt_ArchivoA;
@@ -51,11 +64,6 @@ namespace Matrices {
 		private: System::Windows::Forms::TextBox^ txt_ArchivoB;
 		private: System::Windows::Forms::Button^ btn_ArchivoA;
 		private: System::Windows::Forms::Button^ btn_ArchivoB;
-		private: System::Windows::Forms::Button^ btn_Close;
-		private: System::Windows::Forms::Button^ btn_Open;
-	private: System::Windows::Forms::Panel^ pnl_readArchivos;
-
-
 
 		private: System::ComponentModel::IContainer^ components;
 
@@ -65,6 +73,7 @@ namespace Matrices {
 			#pragma region Windows Form Designer generated code
 
 			void InitializeComponent(void) {
+				this->components = (gcnew System::ComponentModel::Container());
 				System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Matriz::typeid));
 				this->label_titulo = (gcnew System::Windows::Forms::Label());
 				this->btn_salir = (gcnew System::Windows::Forms::Button());
@@ -74,7 +83,6 @@ namespace Matrices {
 				this->btn_det = (gcnew System::Windows::Forms::Button());
 				this->lbl_desc = (gcnew System::Windows::Forms::Label());
 				this->ln_hor = (gcnew System::Windows::Forms::Panel());
-				this->ln_ver = (gcnew System::Windows::Forms::Panel());
 				this->lbl_instruccion = (gcnew System::Windows::Forms::Label());
 				this->box_logo = (gcnew System::Windows::Forms::PictureBox());
 				this->txt_ArchivoA = (gcnew System::Windows::Forms::TextBox());
@@ -83,14 +91,28 @@ namespace Matrices {
 				this->txt_ArchivoB = (gcnew System::Windows::Forms::TextBox());
 				this->btn_ArchivoA = (gcnew System::Windows::Forms::Button());
 				this->btn_ArchivoB = (gcnew System::Windows::Forms::Button());
-				this->btn_Close = (gcnew System::Windows::Forms::Button());
-				this->btn_Open = (gcnew System::Windows::Forms::Button());
 				this->pnl_readArchivos = (gcnew System::Windows::Forms::Panel());
 				this->lbl_MatrizA = (gcnew System::Windows::Forms::Label());
 				this->lbl_MatrizB = (gcnew System::Windows::Forms::Label());
 				this->lbl_error = (gcnew System::Windows::Forms::Label());
+				this->grid_MatrizA = (gcnew System::Windows::Forms::DataGridView());
+				this->pnl_Operaciones = (gcnew System::Windows::Forms::Panel());
+				this->ln_hor2 = (gcnew System::Windows::Forms::Panel());
+				this->ln_hor3 = (gcnew System::Windows::Forms::Panel());
+				this->grid_MatrizB = (gcnew System::Windows::Forms::DataGridView());
+				this->pnl_Intro = (gcnew System::Windows::Forms::Panel());
+				this->btn_Entrar = (gcnew System::Windows::Forms::Button());
+				this->pnl_LoadBar = (gcnew System::Windows::Forms::Panel());
+				this->pnl_LoadBg = (gcnew System::Windows::Forms::Panel());
+				this->lbl_Name = (gcnew System::Windows::Forms::Label());
+				this->timer_LoadScrn = (gcnew System::Windows::Forms::Timer(this->components));
+				this->lbl_IntroTitle = (gcnew System::Windows::Forms::Label());
 				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->box_logo))->BeginInit();
 				this->pnl_readArchivos->SuspendLayout();
+				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->grid_MatrizA))->BeginInit();
+				this->pnl_Operaciones->SuspendLayout();
+				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->grid_MatrizB))->BeginInit();
+				this->pnl_Intro->SuspendLayout();
 				this->SuspendLayout();
 				// 
 				// label_titulo
@@ -113,7 +135,7 @@ namespace Matrices {
 				this->btn_salir->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
 				this->btn_salir->ForeColor = System::Drawing::Color::White;
-				this->btn_salir->Location = System::Drawing::Point(1070, 602);
+				this->btn_salir->Location = System::Drawing::Point(1064, 602);
 				this->btn_salir->Name = L"btn_salir";
 				this->btn_salir->Size = System::Drawing::Size(90, 30);
 				this->btn_salir->TabIndex = 1;
@@ -129,7 +151,7 @@ namespace Matrices {
 				this->btn_sumar->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
 				this->btn_sumar->ForeColor = System::Drawing::Color::White;
-				this->btn_sumar->Location = System::Drawing::Point(-500, -500);
+				this->btn_sumar->Location = System::Drawing::Point(0, 0);
 				this->btn_sumar->Name = L"btn_sumar";
 				this->btn_sumar->Size = System::Drawing::Size(150, 40);
 				this->btn_sumar->TabIndex = 2;
@@ -144,7 +166,7 @@ namespace Matrices {
 				this->btn_restar->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
 				this->btn_restar->ForeColor = System::Drawing::Color::White;
-				this->btn_restar->Location = System::Drawing::Point(-500, -500);
+				this->btn_restar->Location = System::Drawing::Point(196, 0);
 				this->btn_restar->Name = L"btn_restar";
 				this->btn_restar->Size = System::Drawing::Size(150, 40);
 				this->btn_restar->TabIndex = 3;
@@ -159,7 +181,7 @@ namespace Matrices {
 				this->btn_mult->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
 				this->btn_mult->ForeColor = System::Drawing::Color::White;
-				this->btn_mult->Location = System::Drawing::Point(-500, -500);
+				this->btn_mult->Location = System::Drawing::Point(0, 62);
 				this->btn_mult->Name = L"btn_mult";
 				this->btn_mult->Size = System::Drawing::Size(150, 40);
 				this->btn_mult->TabIndex = 4;
@@ -174,7 +196,7 @@ namespace Matrices {
 				this->btn_det->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
 				this->btn_det->ForeColor = System::Drawing::Color::White;
-				this->btn_det->Location = System::Drawing::Point(-500, -500);
+				this->btn_det->Location = System::Drawing::Point(196, 62);
 				this->btn_det->Name = L"btn_det";
 				this->btn_det->Size = System::Drawing::Size(150, 40);
 				this->btn_det->TabIndex = 5;
@@ -198,16 +220,8 @@ namespace Matrices {
 				this->ln_hor->BackColor = System::Drawing::Color::Tomato;
 				this->ln_hor->Location = System::Drawing::Point(19, 87);
 				this->ln_hor->Name = L"ln_hor";
-				this->ln_hor->Size = System::Drawing::Size(1130, 1);
+				this->ln_hor->Size = System::Drawing::Size(1135, 1);
 				this->ln_hor->TabIndex = 9;
-				// 
-				// ln_ver
-				// 
-				this->ln_ver->BackColor = System::Drawing::Color::Tomato;
-				this->ln_ver->Location = System::Drawing::Point(30, 106);
-				this->ln_ver->Name = L"ln_ver";
-				this->ln_ver->Size = System::Drawing::Size(1, 520);
-				this->ln_ver->TabIndex = 10;
 				// 
 				// lbl_instruccion
 				// 
@@ -223,7 +237,7 @@ namespace Matrices {
 				// box_logo
 				// 
 				this->box_logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"box_logo.Image")));
-				this->box_logo->Location = System::Drawing::Point(1089, 13);
+				this->box_logo->Location = System::Drawing::Point(1094, 12);
 				this->box_logo->Name = L"box_logo";
 				this->box_logo->Size = System::Drawing::Size(60, 60);
 				this->box_logo->TabIndex = 12;
@@ -305,38 +319,6 @@ namespace Matrices {
 				this->btn_ArchivoB->UseVisualStyleBackColor = false;
 				this->btn_ArchivoB->Click += gcnew System::EventHandler(this, &Matriz::btn_ArchivoB_Click);
 				// 
-				// btn_Close
-				// 
-				this->btn_Close->BackColor = System::Drawing::Color::Salmon;
-				this->btn_Close->Cursor = System::Windows::Forms::Cursors::Hand;
-				this->btn_Close->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				this->btn_Close->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					static_cast<System::Byte>(0)));
-				this->btn_Close->ForeColor = System::Drawing::Color::White;
-				this->btn_Close->Location = System::Drawing::Point(-500, -500);
-				this->btn_Close->Name = L"btn_Close";
-				this->btn_Close->Size = System::Drawing::Size(20, 100);
-				this->btn_Close->TabIndex = 19;
-				this->btn_Close->Text = L"<";
-				this->btn_Close->UseVisualStyleBackColor = false;
-				this->btn_Close->Click += gcnew System::EventHandler(this, &Matriz::btn_Close_Click);
-				// 
-				// btn_Open
-				// 
-				this->btn_Open->BackColor = System::Drawing::Color::Salmon;
-				this->btn_Open->Cursor = System::Windows::Forms::Cursors::Hand;
-				this->btn_Open->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				this->btn_Open->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-					static_cast<System::Byte>(0)));
-				this->btn_Open->ForeColor = System::Drawing::Color::White;
-				this->btn_Open->Location = System::Drawing::Point(59, 291);
-				this->btn_Open->Name = L"btn_Open";
-				this->btn_Open->Size = System::Drawing::Size(20, 100);
-				this->btn_Open->TabIndex = 20;
-				this->btn_Open->Text = L">";
-				this->btn_Open->UseVisualStyleBackColor = false;
-				this->btn_Open->Click += gcnew System::EventHandler(this, &Matriz::btn_Open_Click);
-				// 
 				// pnl_readArchivos
 				// 
 				this->pnl_readArchivos->Controls->Add(this->btn_ArchivoB);
@@ -346,7 +328,7 @@ namespace Matrices {
 				this->pnl_readArchivos->Controls->Add(this->btn_ArchivoA);
 				this->pnl_readArchivos->Controls->Add(this->lbl_txt_mB);
 				this->pnl_readArchivos->Controls->Add(this->txt_ArchivoB);
-				this->pnl_readArchivos->Location = System::Drawing::Point(97, 106);
+				this->pnl_readArchivos->Location = System::Drawing::Point(19, 109);
 				this->pnl_readArchivos->Name = L"pnl_readArchivos";
 				this->pnl_readArchivos->Size = System::Drawing::Size(416, 112);
 				this->pnl_readArchivos->TabIndex = 21;
@@ -385,35 +367,166 @@ namespace Matrices {
 				this->lbl_error->TabIndex = 19;
 				this->lbl_error->Text = L"Por favor, ingresa el nombre de archivo.";
 				// 
+				// grid_MatrizA
+				// 
+				this->grid_MatrizA->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+				this->grid_MatrizA->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+				this->grid_MatrizA->GridColor = System::Drawing::Color::SeaShell;
+				this->grid_MatrizA->Location = System::Drawing::Point(-500, -5000);
+				this->grid_MatrizA->Name = L"grid_MatrizA";
+				this->grid_MatrizA->Size = System::Drawing::Size(240, 150);
+				this->grid_MatrizA->TabIndex = 23;
+				// 
+				// pnl_Operaciones
+				// 
+				this->pnl_Operaciones->Controls->Add(this->btn_sumar);
+				this->pnl_Operaciones->Controls->Add(this->btn_restar);
+				this->pnl_Operaciones->Controls->Add(this->btn_mult);
+				this->pnl_Operaciones->Controls->Add(this->btn_det);
+				this->pnl_Operaciones->Location = System::Drawing::Point(803, 109);
+				this->pnl_Operaciones->Name = L"pnl_Operaciones";
+				this->pnl_Operaciones->Size = System::Drawing::Size(351, 109);
+				this->pnl_Operaciones->TabIndex = 25;
+				// 
+				// ln_hor2
+				// 
+				this->ln_hor2->BackColor = System::Drawing::Color::Tomato;
+				this->ln_hor2->Location = System::Drawing::Point(19, 245);
+				this->ln_hor2->Name = L"ln_hor2";
+				this->ln_hor2->Size = System::Drawing::Size(1135, 1);
+				this->ln_hor2->TabIndex = 10;
+				// 
+				// ln_hor3
+				// 
+				this->ln_hor3->BackColor = System::Drawing::Color::Tomato;
+				this->ln_hor3->Location = System::Drawing::Point(19, 584);
+				this->ln_hor3->Name = L"ln_hor3";
+				this->ln_hor3->Size = System::Drawing::Size(1135, 1);
+				this->ln_hor3->TabIndex = 11;
+				// 
+				// grid_MatrizB
+				// 
+				this->grid_MatrizB->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+				this->grid_MatrizB->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+				this->grid_MatrizB->GridColor = System::Drawing::Color::SeaShell;
+				this->grid_MatrizB->Location = System::Drawing::Point(-500, -500);
+				this->grid_MatrizB->Name = L"grid_MatrizB";
+				this->grid_MatrizB->Size = System::Drawing::Size(240, 150);
+				this->grid_MatrizB->TabIndex = 26;
+				// 
+				// pnl_Intro
+				// 
+				this->pnl_Intro->Controls->Add(this->btn_Entrar);
+				this->pnl_Intro->Controls->Add(this->pnl_LoadBar);
+				this->pnl_Intro->Controls->Add(this->pnl_LoadBg);
+				this->pnl_Intro->Controls->Add(this->lbl_Name);
+				this->pnl_Intro->Controls->Add(this->lbl_IntroTitle);
+				this->pnl_Intro->Dock = System::Windows::Forms::DockStyle::Fill;
+				this->pnl_Intro->Location = System::Drawing::Point(0, 0);
+				this->pnl_Intro->Name = L"pnl_Intro";
+				this->pnl_Intro->Size = System::Drawing::Size(1170, 644);
+				this->pnl_Intro->TabIndex = 27;
+				// 
+				// btn_Entrar
+				// 
+				this->btn_Entrar->BackColor = System::Drawing::Color::Salmon;
+				this->btn_Entrar->Cursor = System::Windows::Forms::Cursors::Hand;
+				this->btn_Entrar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+				this->btn_Entrar->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					static_cast<System::Byte>(0)));
+				this->btn_Entrar->ForeColor = System::Drawing::Color::White;
+				this->btn_Entrar->Location = System::Drawing::Point(511, 450);
+				this->btn_Entrar->Name = L"btn_Entrar";
+				this->btn_Entrar->Size = System::Drawing::Size(150, 40);
+				this->btn_Entrar->TabIndex = 4;
+				this->btn_Entrar->Text = L"Entrar";
+				this->btn_Entrar->UseVisualStyleBackColor = false;
+				this->btn_Entrar->Click += gcnew System::EventHandler(this, &Matriz::btn_Entrar_Click);
+				// 
+				// pnl_LoadBar
+				// 
+				this->pnl_LoadBar->BackColor = System::Drawing::Color::Salmon;
+				this->pnl_LoadBar->Location = System::Drawing::Point(0, 629);
+				this->pnl_LoadBar->Name = L"pnl_LoadBar";
+				this->pnl_LoadBar->Size = System::Drawing::Size(0, 15);
+				this->pnl_LoadBar->TabIndex = 3;
+				// 
+				// pnl_LoadBg
+				// 
+				this->pnl_LoadBg->BackColor = System::Drawing::Color::Bisque;
+				this->pnl_LoadBg->Dock = System::Windows::Forms::DockStyle::Bottom;
+				this->pnl_LoadBg->Location = System::Drawing::Point(0, 629);
+				this->pnl_LoadBg->Name = L"pnl_LoadBg";
+				this->pnl_LoadBg->Size = System::Drawing::Size(1170, 15);
+				this->pnl_LoadBg->TabIndex = 2;
+				// 
+				// lbl_Name
+				// 
+				this->lbl_Name->AutoSize = true;
+				this->lbl_Name->Font = (gcnew System::Drawing::Font(L"Montserrat SemiBold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+					static_cast<System::Byte>(0)));
+				this->lbl_Name->ForeColor = System::Drawing::Color::Salmon;
+				this->lbl_Name->Location = System::Drawing::Point(528, 594);
+				this->lbl_Name->Name = L"lbl_Name";
+				this->lbl_Name->Size = System::Drawing::Size(116, 21);
+				this->lbl_Name->TabIndex = 1;
+				this->lbl_Name->Text = L"Tommy Vega";
+				// 
+				// timer_LoadScrn
+				// 
+				this->timer_LoadScrn->Enabled = true;
+				this->timer_LoadScrn->Interval = 15;
+				this->timer_LoadScrn->Tick += gcnew System::EventHandler(this, &Matriz::timer_LoadScrn_Tick);
+				// 
+				// lbl_IntroTitle
+				// 
+				this->lbl_IntroTitle->AutoSize = true;
+				this->lbl_IntroTitle->BackColor = System::Drawing::Color::SeaShell;
+				this->lbl_IntroTitle->Font = (gcnew System::Drawing::Font(L"Montserrat SemiBold", 71.99999F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+					static_cast<System::Byte>(0)));
+				this->lbl_IntroTitle->ForeColor = System::Drawing::Color::Tomato;
+				this->lbl_IntroTitle->Location = System::Drawing::Point(353, 250);
+				this->lbl_IntroTitle->Name = L"lbl_IntroTitle";
+				this->lbl_IntroTitle->Size = System::Drawing::Size(466, 127);
+				this->lbl_IntroTitle->TabIndex = 0;
+				this->lbl_IntroTitle->Text = L"Matrices";
+				this->lbl_IntroTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+				// 
 				// Matriz
 				// 
 				this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				this->BackColor = System::Drawing::Color::SeaShell;
-				this->ClientSize = System::Drawing::Size(1172, 644);
+				this->ClientSize = System::Drawing::Size(1170, 644);
+				this->Controls->Add(this->pnl_Intro);
+				this->Controls->Add(this->grid_MatrizB);
+				this->Controls->Add(this->ln_hor3);
+				this->Controls->Add(this->ln_hor2);
+				this->Controls->Add(this->pnl_Operaciones);
+				this->Controls->Add(this->grid_MatrizA);
 				this->Controls->Add(this->lbl_error);
 				this->Controls->Add(this->lbl_MatrizB);
 				this->Controls->Add(this->lbl_MatrizA);
 				this->Controls->Add(this->pnl_readArchivos);
-				this->Controls->Add(this->btn_Open);
-				this->Controls->Add(this->btn_Close);
 				this->Controls->Add(this->box_logo);
-				this->Controls->Add(this->ln_ver);
 				this->Controls->Add(this->ln_hor);
 				this->Controls->Add(this->lbl_desc);
-				this->Controls->Add(this->btn_det);
-				this->Controls->Add(this->btn_mult);
-				this->Controls->Add(this->btn_restar);
-				this->Controls->Add(this->btn_sumar);
 				this->Controls->Add(this->btn_salir);
 				this->Controls->Add(this->label_titulo);
+				this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 				this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 				this->Name = L"Matriz";
+				this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 				this->Text = L"Matrices";
 				this->Load += gcnew System::EventHandler(this, &Matriz::Matriz_Load);
 				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->box_logo))->EndInit();
 				this->pnl_readArchivos->ResumeLayout(false);
 				this->pnl_readArchivos->PerformLayout();
+				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->grid_MatrizA))->EndInit();
+				this->pnl_Operaciones->ResumeLayout(false);
+				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->grid_MatrizB))->EndInit();
+				this->pnl_Intro->ResumeLayout(false);
+				this->pnl_Intro->PerformLayout();
 				this->ResumeLayout(false);
 				this->PerformLayout();
 
@@ -421,18 +534,29 @@ namespace Matrices {
 		
 		#pragma endregion
 		private: System::Void Matriz_Load(System::Object^ sender, System::EventArgs^ e) {
-			Console::WriteLine("M A T R I C E S");
+			this->btn_Entrar->Hide();
+
+			Console::WriteLine("M A T R I C E S\n");
 			Console::WriteLine("Realización de operaciones de suma, resta, multiplicación y cálculo de determinante de dos matrices dadas.");
 			Console::WriteLine("----------------------------------------------------------------------------------------------------------\n");
 		}
-	
-		private: System::Void btn_salir_Click(System::Object^ sender, System::EventArgs^ e) {
-			this->Close();
+
+		private: System::Void timer_LoadScrn_Tick(System::Object^ sender, System::EventArgs^ e) {
+			this->pnl_LoadBar->Width += 10;
+
+			if (this->pnl_LoadBar->Width >= 1170) {
+				this->timer_LoadScrn->Stop();
+				this->btn_Entrar->Show();
+			}
 		}
 
+		private: System::Void btn_Entrar_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->pnl_Intro->Hide();
+		}
+	
 		private: System::Void btn_ArchivoA_Click(System::Object^ sender, System::EventArgs^ e) {
 			if (this->txt_ArchivoA->Text->Length == 0) {
-				this->lbl_error->Location = System::Drawing::Point(517, 148);
+				this->lbl_error->Location = System::Drawing::Point(441, 150);
 			}
 			else {
 				String^ numerosA;
@@ -441,24 +565,26 @@ namespace Matrices {
 				
 				if (File::Exists(archivoA_txt)) {
 					this->lbl_error->Location = System::Drawing::Point(-500, -500);
-					this->lbl_MatrizA->Location = System::Drawing::Point(584, 109);
+					this->lbl_MatrizA->Location = System::Drawing::Point(36, 316);
+					this->grid_MatrizA->Location = System::Drawing::Point(39, 349);
 
 					StreamReader^ input_ArchivoA = File::OpenText(archivoA_txt);
 					
 					Console::WriteLine("Nombre de archivo A: " + archivoA_txt);
 
 					while ((numerosA = input_ArchivoA->ReadLine()) != nullptr) {
-						this->lbl_instruccion->Text = numerosA;
 						Console::WriteLine("[ " + numerosA + " ]");
 					}
 
-					if (input_ArchivoA)
+					if (input_ArchivoA) {
+						this->btn_ArchivoA->Enabled = false;
 						input_ArchivoA->Close();
+					}
 				}
 				else {
 					this->lbl_MatrizA->Location = System::Drawing::Point(-500, -500);
 
-					this->lbl_error->Location = System::Drawing::Point(517, 148);
+					this->lbl_error->Location = System::Drawing::Point(441, 150);
 					this->lbl_error->Text = L"El archivo no existe. Intentalo de nuevo.";
 				}
 			}
@@ -466,7 +592,7 @@ namespace Matrices {
 
 		private: System::Void btn_ArchivoB_Click(System::Object^ sender, System::EventArgs^ e) {
 			if (this->txt_ArchivoA->Text->Length == 0) {
-				this->lbl_error->Location = System::Drawing::Point(517, 192);
+				this->lbl_error->Location = System::Drawing::Point(441, 192);
 			}
 			else {
 				String^ numerosB;
@@ -475,48 +601,34 @@ namespace Matrices {
 
 				if (File::Exists(archivoB_txt)) {
 					this->lbl_error->Location = System::Drawing::Point(-500, -500);
-					this->lbl_MatrizB->Location = System::Drawing::Point(860, 109);
+					this->lbl_MatrizB->Location = System::Drawing::Point(396, 316);
+					this->grid_MatrizB->Location = System::Drawing::Point(399, 349);
 
 					StreamReader^ input_ArchivoB = File::OpenText(archivoB_txt);
 
 					Console::WriteLine("\nNombre de archivo B: " + archivoB_txt);
 
 					while ((numerosB = input_ArchivoB->ReadLine()) != nullptr) {
-						this->lbl_instruccion->Text = numerosB;
 						Console::WriteLine("[ " + numerosB + " ]");
 					}
 
-					if (input_ArchivoB)
+					if (input_ArchivoB) {
+						this->btn_ArchivoB->Enabled = false;
 						input_ArchivoB->Close();
+					}
 				}
 				else {
 					this->lbl_MatrizB->Location = System::Drawing::Point(-500, -500);
 
-					this->lbl_error->Location = System::Drawing::Point(517, 192);
+					this->lbl_error->Location = System::Drawing::Point(441, 194);
 					this->lbl_error->Text = L"El archivo no existe. Intentalo de nuevo.";
 				}
 			}
 		}
 
-		private: System::Void btn_Close_Click(System::Object^ sender, System::EventArgs^ e) {
-			this->btn_sumar->Location = System::Drawing::Point(-500, -500);
-			this->btn_restar->Location = System::Drawing::Point(-500, -500);
-			this->btn_mult->Location = System::Drawing::Point(-500, -500);
-			this->btn_det->Location = System::Drawing::Point(-500, -500);
-			this->ln_ver->Location = System::Drawing::Point(30, 106);
-			this->btn_Close->Location = System::Drawing::Point(-500, -500);
-			this->btn_Open->Location = System::Drawing::Point(60, 291);
-			this->pnl_readArchivos->Location = System::Drawing::Point(97, 106);
-		}
-		private: System::Void btn_Open_Click(System::Object^ sender, System::EventArgs^ e) {
-			this->btn_sumar->Location = System::Drawing::Point(19, 218);
-			this->btn_restar->Location = System::Drawing::Point(19, 284);
-			this->btn_mult->Location = System::Drawing::Point(19, 351);
-			this->btn_det->Location = System::Drawing::Point(19, 418);
-			this->ln_ver->Location = System::Drawing::Point(190, 106);
-			this->btn_Open->Location = System::Drawing::Point(-500, -500);
-			this->btn_Close->Location = System::Drawing::Point(211, 291);
-			this->pnl_readArchivos->Location = System::Drawing::Point(260, 106);
+		private: System::Void btn_salir_Click(System::Object^ sender, System::EventArgs^ e) {
+			system("exit");
+			this->Close();
 		}
 	};
 }

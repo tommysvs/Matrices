@@ -14,11 +14,6 @@ public:
 	void restarMatriz();
 	void multMatriz();
 	void detMatriz();
-
-	void ingresarMatrizA();
-	void ingresarMatrizB();
-	void consultarMatrizA();
-	void consiltarMatrizB();
 };
 
 #endif // !OPERACIONES_H
