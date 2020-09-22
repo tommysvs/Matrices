@@ -21,18 +21,12 @@
     <ClCompile Include="Operaciones.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Nodo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matriz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operaciones.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Nodo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

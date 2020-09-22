@@ -121,14 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matriz.cpp" />
-    <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="Operaciones.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matriz.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Nodo.h" />
     <ClInclude Include="Operaciones.h" />
   </ItemGroup>
   <ItemGroup>
