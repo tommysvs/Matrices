@@ -38,7 +38,7 @@ void Operaciones::imprimir() {
 		actual = actual->getSiguiente();
 	} while (actual != primero);
 
-	cout << "\n";
+	cout << "\n"; 
 }
 
 

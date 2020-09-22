@@ -654,7 +654,7 @@ namespace Matrices {
 						this->grid_MatrizA->Rows->Add(numeroA_int);
 
 						objOperaciones->agregarElemento(numeroA_int);
-						objOperaciones->imprimir();
+						objOperaciones->imprimir(); 
 					}
 
 					matrizIn.close();

@@ -18,7 +18,7 @@ public:
 
 	int getValor();
 	Nodo* getAnterior();
-	Nodo* getSiguiente();
+	Nodo* getSiguiente(); 
 };
 
 #endif // !NODO_H

@@ -26,4 +26,4 @@ Nodo* Nodo::getAnterior() {
 
 Nodo* Nodo::getSiguiente() {
 	return this->siguiente;
-}
+} 

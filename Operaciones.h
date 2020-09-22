@@ -20,7 +20,7 @@ public:
 	void sumarMatriz();
 	void restarMatriz();
 	void multMatriz();
-	void detMatriz();
+	void detMatriz(); 
 };
 
 #endif // !OPERACIONES_H
