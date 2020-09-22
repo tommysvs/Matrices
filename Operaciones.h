@@ -1,14 +1,21 @@
 #pragma once
 
-
 #ifndef OPERACIONES_H
 #define OPERACIONES_H
 
+#include "Nodo.h"
+
 class Operaciones {
 private:
-	int** num_matriz;
+	Nodo* primero;
+	Nodo* ultimo;
 public:
 	Operaciones();
+
+	bool estaVacia();
+	void agregarElemento(int);
+
+	void imprimir();
 
 	void sumarMatriz();
 	void restarMatriz();
