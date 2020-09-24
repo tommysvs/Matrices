@@ -3,7 +3,10 @@
 #ifndef OPERACIONES_H
 #define OPERACIONES_H
 
+#include <string>
 #include "Nodo.h"
+
+using namespace System;
 
 class Operaciones {
 private:
@@ -13,14 +16,15 @@ public:
 	Operaciones();
 
 	bool estaVacia();
-	void agregarElemento(int);
+	void agregar_MatrizA(int);
+	void agregar_MatrizB(int);
 
 	void imprimir();
 
-	void sumarMatriz();
-	void restarMatriz();
-	void multMatriz();
-	void detMatriz(); 
+	void sumarMatriz(String^);
+	void restarMatriz(String^);
+	void multMatriz(String^);
+	void detMatriz(String^);
 };
 
 #endif // !OPERACIONES_H
