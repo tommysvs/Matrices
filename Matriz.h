@@ -86,12 +86,12 @@ namespace Matrices {
 			void InitializeComponent(void) {
 				this->components = (gcnew System::ComponentModel::Container());
 				System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Matriz::typeid));
-				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle16 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle17 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle18 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				this->label_titulo = (gcnew System::Windows::Forms::Label());
 				this->btn_salir = (gcnew System::Windows::Forms::Button());
 				this->btn_sumar = (gcnew System::Windows::Forms::Button());
@@ -413,31 +413,30 @@ namespace Matrices {
 				this->grid_MatrizA->BackgroundColor = System::Drawing::Color::White;
 				this->grid_MatrizA->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				this->grid_MatrizA->ColumnHeadersVisible = false;
-				dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-				dataGridViewCellStyle13->BackColor = System::Drawing::Color::White;
-				dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
+				dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+				dataGridViewCellStyle1->BackColor = System::Drawing::Color::White;
+				dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::ControlText;
-				dataGridViewCellStyle13->Padding = System::Windows::Forms::Padding(15, 5, 15, 5);
-				dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::Salmon;
-				dataGridViewCellStyle13->SelectionForeColor = System::Drawing::Color::White;
-				dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-				this->grid_MatrizA->DefaultCellStyle = dataGridViewCellStyle13;
+				dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ControlText;
+				dataGridViewCellStyle1->Padding = System::Windows::Forms::Padding(15, 5, 15, 5);
+				dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::Salmon;
+				dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::White;
+				dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+				this->grid_MatrizA->DefaultCellStyle = dataGridViewCellStyle1;
 				this->grid_MatrizA->GridColor = System::Drawing::Color::SeaShell;
 				this->grid_MatrizA->Location = System::Drawing::Point(39, 349);
 				this->grid_MatrizA->Name = L"grid_MatrizA";
 				this->grid_MatrizA->ReadOnly = true;
-				dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				dataGridViewCellStyle14->BackColor = System::Drawing::Color::White;
-				dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
+				dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				dataGridViewCellStyle2->BackColor = System::Drawing::Color::White;
+				dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::InfoText;
-				dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::Salmon;
-				dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				this->grid_MatrizA->RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+				dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::InfoText;
+				dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::Salmon;
+				dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				this->grid_MatrizA->RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
 				this->grid_MatrizA->RowHeadersVisible = false;
-				this->grid_MatrizA->ScrollBars = System::Windows::Forms::ScrollBars::None;
 				this->grid_MatrizA->Size = System::Drawing::Size(240, 150);
 				this->grid_MatrizA->TabIndex = 23;
 				// 
@@ -565,29 +564,29 @@ namespace Matrices {
 				this->grid_MatrizB->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 				this->grid_MatrizB->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				this->grid_MatrizB->ColumnHeadersVisible = false;
-				dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-				dataGridViewCellStyle15->BackColor = System::Drawing::Color::White;
-				dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
+				dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+				dataGridViewCellStyle3->BackColor = System::Drawing::Color::White;
+				dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::ControlText;
-				dataGridViewCellStyle15->Padding = System::Windows::Forms::Padding(15, 5, 15, 5);
-				dataGridViewCellStyle15->SelectionBackColor = System::Drawing::Color::Salmon;
-				dataGridViewCellStyle15->SelectionForeColor = System::Drawing::Color::White;
-				dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-				this->grid_MatrizB->DefaultCellStyle = dataGridViewCellStyle15;
+				dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::ControlText;
+				dataGridViewCellStyle3->Padding = System::Windows::Forms::Padding(15, 5, 15, 5);
+				dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::Salmon;
+				dataGridViewCellStyle3->SelectionForeColor = System::Drawing::Color::White;
+				dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+				this->grid_MatrizB->DefaultCellStyle = dataGridViewCellStyle3;
 				this->grid_MatrizB->GridColor = System::Drawing::Color::SeaShell;
 				this->grid_MatrizB->Location = System::Drawing::Point(399, 349);
 				this->grid_MatrizB->Name = L"grid_MatrizB";
 				this->grid_MatrizB->ReadOnly = true;
-				dataGridViewCellStyle16->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				dataGridViewCellStyle16->BackColor = System::Drawing::SystemColors::Control;
-				dataGridViewCellStyle16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				dataGridViewCellStyle4->BackColor = System::Drawing::SystemColors::Control;
+				dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				dataGridViewCellStyle16->ForeColor = System::Drawing::SystemColors::WindowText;
-				dataGridViewCellStyle16->SelectionBackColor = System::Drawing::Color::Salmon;
-				dataGridViewCellStyle16->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				dataGridViewCellStyle16->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				this->grid_MatrizB->RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+				dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::WindowText;
+				dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::Salmon;
+				dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				this->grid_MatrizB->RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 				this->grid_MatrizB->RowHeadersVisible = false;
 				this->grid_MatrizB->Size = System::Drawing::Size(240, 150);
 				this->grid_MatrizB->TabIndex = 26;
@@ -695,29 +694,29 @@ namespace Matrices {
 				this->grid_MatrizRes->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 				this->grid_MatrizRes->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 				this->grid_MatrizRes->ColumnHeadersVisible = false;
-				dataGridViewCellStyle17->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-				dataGridViewCellStyle17->BackColor = System::Drawing::Color::White;
-				dataGridViewCellStyle17->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
+				dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+				dataGridViewCellStyle5->BackColor = System::Drawing::Color::White;
+				dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Montserrat Light", 9.749999F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				dataGridViewCellStyle17->ForeColor = System::Drawing::SystemColors::ControlText;
-				dataGridViewCellStyle17->Padding = System::Windows::Forms::Padding(15, 5, 15, 5);
-				dataGridViewCellStyle17->SelectionBackColor = System::Drawing::Color::Salmon;
-				dataGridViewCellStyle17->SelectionForeColor = System::Drawing::Color::White;
-				dataGridViewCellStyle17->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-				this->grid_MatrizRes->DefaultCellStyle = dataGridViewCellStyle17;
+				dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::ControlText;
+				dataGridViewCellStyle5->Padding = System::Windows::Forms::Padding(15, 5, 15, 5);
+				dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::Salmon;
+				dataGridViewCellStyle5->SelectionForeColor = System::Drawing::Color::White;
+				dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+				this->grid_MatrizRes->DefaultCellStyle = dataGridViewCellStyle5;
 				this->grid_MatrizRes->GridColor = System::Drawing::Color::SeaShell;
 				this->grid_MatrizRes->Location = System::Drawing::Point(769, 349);
 				this->grid_MatrizRes->Name = L"grid_MatrizRes";
 				this->grid_MatrizRes->ReadOnly = true;
-				dataGridViewCellStyle18->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-				dataGridViewCellStyle18->BackColor = System::Drawing::SystemColors::Control;
-				dataGridViewCellStyle18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+				dataGridViewCellStyle6->BackColor = System::Drawing::SystemColors::Control;
+				dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				dataGridViewCellStyle18->ForeColor = System::Drawing::SystemColors::WindowText;
-				dataGridViewCellStyle18->SelectionBackColor = System::Drawing::Color::Salmon;
-				dataGridViewCellStyle18->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-				dataGridViewCellStyle18->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-				this->grid_MatrizRes->RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+				dataGridViewCellStyle6->ForeColor = System::Drawing::SystemColors::WindowText;
+				dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::Salmon;
+				dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+				dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+				this->grid_MatrizRes->RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
 				this->grid_MatrizRes->RowHeadersVisible = false;
 				this->grid_MatrizRes->Size = System::Drawing::Size(240, 150);
 				this->grid_MatrizRes->TabIndex = 32;
@@ -835,6 +834,7 @@ namespace Matrices {
 						linea_C = new char[len];
 						strcpy_s(linea_C, len + 1, linea_S.c_str());
 						numeroA_char = strtok(linea_C, " ");
+						
 						while (numeroA_char != NULL) {
 							numeroA_int = atoi(numeroA_char);
 
@@ -890,13 +890,18 @@ namespace Matrices {
 						linea_C = new char[len];
 						strcpy_s(linea_C, len + 1, linea_S.c_str());
 						numeroB_char = strtok(linea_C, " ");
-						numeroB_int = atoi(numeroB_char);
 
-						addCounter_B += 1;
-						this->grid_MatrizB->Columns->Add(addCounter_B.ToString(), addCounter_B.ToString());
-						this->grid_MatrizB->Rows->Add(numeroB_int.ToString());
+						while (numeroB_char != NULL) {
+							numeroB_int = atoi(numeroB_char);
 
-						objOperaciones->agregar_MatrizB(numeroB_int);
+							this->grid_MatrizB->Columns->Add(addCounter_B.ToString(), addCounter_B.ToString());
+							this->grid_MatrizB->Rows->Add(numeroB_int.ToString());
+
+							objOperaciones->agregar_MatrizB(numeroB_int);
+
+							numeroB_char = strtok(NULL, " ");
+							addCounter_B++;
+						}
 					}
 
 					objOperaciones->imprimir();
