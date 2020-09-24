@@ -7,17 +7,17 @@ class Nodo {
 private:
 	int valor;
 	Nodo* siguiente;
-	Nodo* anterior;
+	Nodo* abajo;
 public:
 	Nodo();
 	Nodo(int, Nodo*, Nodo*);
 
 	void setValor(int);
-	void setAnterior(Nodo*);
+	void setAbajo(Nodo*);
 	void setSiguiente(Nodo*);
 
 	int getValor();
-	Nodo* getAnterior();
+	Nodo* getAbajo();
 	Nodo* getSiguiente(); 
 };
 

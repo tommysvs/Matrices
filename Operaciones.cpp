@@ -7,7 +7,7 @@
 using namespace std;
 using namespace System;
 
-Operaciones::Operaciones() : primero(nullptr), ultimo(nullptr) {}
+Operaciones::Operaciones() : primero(nullptr), abajo(nullptr) {}
 
 bool Operaciones::estaVacia() {
 	return primero == nullptr;
@@ -17,19 +17,19 @@ void Operaciones::agregar_MatrizA(int _valor) {
 	Nodo* nuevo = new Nodo(_valor, nullptr, nullptr);
 
 	if (estaVacia()) {
-		primero = ultimo = nuevo;
+		primero = abajo = nuevo;
 
-		ultimo->setSiguiente(primero);
-		primero->setAnterior(ultimo);
+		abajo->setSiguiente(primero);
+		primero->setAbajo(abajo);
 	}
 	else {
-		ultimo->setSiguiente(nuevo);
-		nuevo->setAnterior(ultimo);
+		abajo->setSiguiente(nuevo);
+		nuevo->setAbajo(abajo);
 
-		ultimo = nuevo;
+		abajo = nuevo;
 
-		ultimo->setSiguiente(primero);
-		primero->setAnterior(ultimo);
+		abajo->setSiguiente(primero);
+		primero->setAbajo(abajo);
 	}
 }
 
@@ -37,19 +37,19 @@ void Operaciones::agregar_MatrizB(int _valor) {
 	Nodo* nuevo = new Nodo(_valor, nullptr, nullptr);
 
 	if (estaVacia()) {
-		primero = ultimo = nuevo;
+		primero = abajo = nuevo;
 
-		ultimo->setSiguiente(primero);
-		primero->setAnterior(ultimo);
+		abajo->setSiguiente(primero);
+		primero->setAbajo(abajo);
 	}
 	else {
-		ultimo->setSiguiente(nuevo);
-		nuevo->setAnterior(ultimo);
+		abajo->setSiguiente(nuevo);
+		nuevo->setAbajo(abajo);
 
-		ultimo = nuevo;
+		abajo = nuevo;
 
-		ultimo->setSiguiente(primero);
-		primero->setAnterior(ultimo);
+		abajo->setSiguiente(primero);
+		primero->setAbajo(abajo);
 	}
 }
 

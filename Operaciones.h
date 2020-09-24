@@ -11,7 +11,7 @@ using namespace System;
 class Operaciones {
 private:
 	Nodo* primero;
-	Nodo* ultimo;
+	Nodo* abajo;
 public:
 	Operaciones();
 
